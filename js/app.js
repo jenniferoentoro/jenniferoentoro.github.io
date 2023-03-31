@@ -13,10 +13,6 @@ window.addEventListener('beforeinstallprompt', function(event) {
   console.log('beforeinstallprompt fired');
   event.preventDefault();
   deferredPrompt = event;
-  return false;
-});
-
-document.addEventListener('DOMContentLoaded', function() {
   if (deferredPrompt) {
     deferredPrompt.prompt();
 
@@ -32,4 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     deferredPrompt = null;
   }
+  return false;
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  
 });
